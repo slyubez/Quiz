@@ -3,16 +3,27 @@
  */
 package ru.progschool.november_2013.java.quiz;
 
-import ru.progschool.november_2013.java.quiz.Answer;
+import ru.progschool.november_2013.java.quiz.AnswersList;
 
 /**
  * @author ProgSchool
  *
  */
 public class Question {
+	/**
+	 * Текст вопроса
+	 */
 	public String text;
-	public int answerscount;
-	public Answer[] answers;
+	/**
+	 * Набор ответов
+	 */
+	public AnswersList answers;
+	/**
+	 * @Возвращает число ответов на вопрос
+	 */
+	public int getAnswersCount() {
+		return answers.getCount();
+	}	
 }
 	
 

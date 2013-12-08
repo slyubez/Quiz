@@ -7,16 +7,16 @@ package ru.progschool.november_2013.java.quiz;
  */
 import ru.progschool.november_2013.java.quiz.Question;
 import ru.progschool.november_2013.java.quiz.Answer;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import ru.progschool.november_2013.java.quiz.AnswersList;
+import java.io.*;
+import java.util.*;
 
 
 public class QuizData {
 	public static final String QUIZDEFAULTFILENAME = "DefaultList.prop";
 	/**
-	 * Функция для преобразования числа в строку
-	 * с добавлением незначащих нулей.
+	 * Функция для преобразования числа в строку добавлением незначащих нулей.
+	 * Здесь нужна для формирования имён параметров prop-файла.
 	 */
 	public static String intToTripleString(int i){
 		String s = Integer.toString(i);
@@ -33,9 +33,8 @@ public class QuizData {
 		public String header;
 		public String theme;
 		public int testingtime;
-		public int questionscount;
 		public int testingcount;
-		public Question[] questions;
+		public ArrayList<Question> questions;
 		public int loadFromFile(String filename){
 			Properties prop = new Properties();
 	    	try {
@@ -45,21 +44,23 @@ public class QuizData {
 	            String s = prop.getProperty("testtime");
 	            this.testingtime = Integer.parseInt(s);
 	            s = prop.getProperty("questcnt");
-	            this.questionscount = Integer.parseInt(s);
+	            int qc = Integer.parseInt(s);
 	            s = prop.getProperty("questfortestcnt");
-	            this.testingcount = Integer.parseInt(s);
-	            questions = new Question[questionscount];
-	            for (int i = 0; i<questionscount; i++) {
-	            	questions [i] = new Question();
+	            this.setTestingCount(Integer.parseInt(s));
+	            questions = new ArrayList<Question>();
+	            for (int i = 0; i<qc; i++) {
+	            	Question q = new Question();
 	            	s = "Q"+QuizData.intToTripleString(i);
-	            	questions [i].text = s+"_t";
-	            	questions [i].answerscount = Integer.parseInt(s+"_c");
-	            	Answer[] answers = new Answer[questions [i].answerscount];
+	            	q.text = s+"_t";
+	            	int ac = Integer.parseInt(s+"_c");
+	            	q.answers = new AnswersList();
 	            	String s1 = s+"_";
-	            	for (int j = 0; j<questions [i].answerscount; j++) {
-	            		answers [j].answertext = s1+Integer.toString(j);
-	            		answers [j].isright = ((answers [j].answertext).charAt(j)=='*');
+	            	String s2;
+	            	for (int j = 0; j<ac; j++) {
+	            		s2 = prop.getProperty(s1+Integer.toString(j));
+	            		q.answers.addAnswerFromFileString(s2);
 	            	}
+	            questions.add(q);	
 	            }
 	            return (0);
 	    	} catch (IOException ex) {
@@ -69,6 +70,18 @@ public class QuizData {
 		}
 		public void saveToFile(String filename){
 			
+		}
+		/**
+		 * Возвращает число вопросов, которые нужно задать тестируемому.
+		 */
+		public int getTestingCount() {
+			return testingcount;
+		}
+		/**
+		 * @param testingcount the testingcount to set
+		 */
+		public void setTestingCount(int testingcount) {
+			this.testingcount = testingcount;
 		}
 		
 	}
