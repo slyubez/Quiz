@@ -17,7 +17,8 @@ public class Answer {
 	 */
 	private boolean isright;
 	/**
-	 * Метод преобразования полей вопроса в текст для записи в список вопросов и ответов
+	 * Метод преобразования полей вопроса в текст 
+	 * для записи в список вопросов и ответов
 	 */
 	public String convertTextForFile(){
 		if (this.isright){
@@ -26,22 +27,12 @@ public class Answer {
 		else return (answertext);
 	}
 	/**
-	 * Удаляет из строки S первый символ
-	 */
-	private static String deleteFirstSymbol(String s){
-		String s1 = "";
-		for (int i=1; i<s.length();i++){
-			s1 = s1 + s.charAt(i);
-		}
-		return (s1);
-	}
-	/**
 	 * Формирует поля ответа из строки anstext
 	 * в формате хранения ответа в файле
 	 */
 	public void formAnswerFromText(String anstext){
 		if (anstext.charAt(1)=='*'){
-			this.answertext = deleteFirstSymbol(anstext);
+			this.answertext = anstext.substring (1, anstext.length());
 			this.isright = false;
 		}
 		else{
