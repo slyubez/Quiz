@@ -21,9 +21,10 @@ public class Question {
 	/**
 	 * @Возвращает число ответов на вопрос
 	 */
-	public int getAnswersCount() {
-		return answers.getCount();
-	}	
+	public int getAnswersCount(){return answers.getCount();}
+	/**
+	 * @Возвращает число правильных ответов на вопрос
+	 */
+	public int getRightAnswersCount(){return answers.getRightAnswersCount();}
 }
 	
-

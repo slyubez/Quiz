@@ -37,7 +37,7 @@ public class AnswersList {
 		int cnt = 0;
 		for (int i=0; i<this.Answers.size(); i++){
 			Answer ans = Answers.get(i);
-			if (ans.answertext.charAt(1)=='*'){cnt++;}
+			if (ans.isright) cnt++;
 		}
 		return (cnt);
 	}

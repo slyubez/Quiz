@@ -15,29 +15,23 @@ public class Answer {
 	/**
 	 * Признак правильности ответа
 	 */
-	private boolean isright;
+	public boolean isright;
 	/**
 	 * Метод преобразования полей вопроса в текст 
-	 * для записи в список вопросов и ответов
+	 * для записи в список вопросов и ответов.
+	 * Используется только в программе
+	 * администрирования.
 	 */
-	public String convertTextForFile(){
-		if (this.isright){
-			return ('*'+answertext);
-		}
+	public String convertTextToFileFormat(){
+		if (this.isright) return ('*'+answertext);
 		else return (answertext);
 	}
 	/**
-	 * Формирует поля ответа из строки anstext
-	 * в формате хранения ответа в файле
+	 * Формирует поля ответа из переданной строки anstext
 	 */
 	public void formAnswerFromText(String anstext){
-		if (anstext.charAt(1)=='*'){
-			this.answertext = anstext.substring (1, anstext.length());
-			this.isright = false;
-		}
-		else{
-			this.answertext = anstext;
-			this.isright = true;
-		}
+		this.isright = (anstext.charAt(1)=='*');
+		if (this.isright) this.answertext = anstext.substring (1, anstext.length());
+		else this.answertext = anstext;
 	}
 }
