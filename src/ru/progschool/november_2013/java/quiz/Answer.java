@@ -1,37 +1,30 @@
-/**
- * 
- */
 package ru.progschool.november_2013.java.quiz;
 
 /**
- * @author Sergey
- *Класс для хранения одного ответа на вопрос
+ * Класс хранения ответа и его методов
  */
 public class Answer {
 	/**
-	 * Текст ответа (без звёздочки)
+	 * Текст ответа
 	 */
-	public String answertext;
+	private String answer;
 	/**
 	 * Признак правильности ответа
 	 */
-	public boolean isright;
+	private boolean isright;
 	/**
-	 * Метод преобразования полей вопроса в текст 
-	 * для записи в список вопросов и ответов.
-	 * Используется только в программе
-	 * администрирования.
+	 * Конструктор ответа. Принимает поля текста (String) и правильности ответа (boolean).
 	 */
-	public String convertTextToFileFormat(){
-		if (this.isright) return ('*'+answertext);
-		else return (answertext);
+	public Answer(String answertext, boolean right){
+		this.isright = right;
+		this.answer = answertext;
 	}
 	/**
-	 * Формирует поля ответа из переданной строки anstext
+	 * Возвращает текст ответа.
 	 */
-	public void formAnswerFromText(String anstext){
-		this.isright = (anstext.charAt(1)=='*');
-		if (this.isright) this.answertext = anstext.substring (1, anstext.length());
-		else this.answertext = anstext;
-	}
+	public String getAnswer(){return this.answer;}
+	/**
+	 * Возвращает правильность ответа.
+	 */
+	public boolean isRight(){return this.isright;}
 }
