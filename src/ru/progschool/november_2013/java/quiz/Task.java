@@ -7,6 +7,9 @@ import ru.progschool.november_2013.java.quiz.Answer;
  * Класс вопроса.
  */
 public class Task {
+	public Task(){
+		this.answers = new ArrayList<>();
+	}
 	/**
 	 * Текст вопроса
 	 */
@@ -14,7 +17,7 @@ public class Task {
 	/**
 	 * Набор ответов
 	 */
-	ArrayList<Answer> answers;
+	private ArrayList<Answer> answers;
 	/**
 	 * Устанавливает текст ответа
 	 */

@@ -13,7 +13,10 @@ import java.util.ArrayList;
  * списки вопросов и ответов, а также общеиспользуемые поля и методы
  * программ администратора и тестирования.
  */
-public class Test {	
+public class Test {
+	public Test(){
+		this.tasks = new ArrayList<>();
+	}
 	/**
 	 * Тема опроса.
 	 */
@@ -80,7 +83,7 @@ public class Test {
 		Task task = this.tasks.get(questionindex);
 		int i = task.getAnswersCount();
 		if (answerindex>(i-1)) throw (new QuestionException("Неверный индекс ответа."));
-		return task.answers.get(answerindex).getAnswer();
+		return task.getAnswers().get(answerindex).getAnswer();
 	}
 	/**
 	 * Возвращает правильность ответа с индексом answerindex на вопрос с индексом index
@@ -90,7 +93,7 @@ public class Test {
 		Task task = this.tasks.get(questionindex);
 		int i = task.getAnswersCount();
 		if (answerindex>(i-1)) throw (new QuestionException("Неверный индекс ответа."));
-		return task.answers.get(answerindex).isRight();
+		return task.getAnswers().get(answerindex).isRight();
 	}
 	//дополнительные подклассы
 	/**
