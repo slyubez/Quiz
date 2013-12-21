@@ -43,36 +43,36 @@ public class QuizViewTest extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LabelofNumberOfQuestion.setText("Р’РѕРїСЂРѕСЃ в„– 1.");
+        LabelofNumberOfQuestion.setText("Вопрос № 1.");
 
         TextAreaWriteQuestion.setColumns(20);
         TextAreaWriteQuestion.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         TextAreaWriteQuestion.setRows(5);
-        TextAreaWriteQuestion.setText("Р’С‹РІРѕРґ РІРѕРїСЂРѕСЃР°");
+        TextAreaWriteQuestion.setText("Вывод вопроса");
         jScrollPane1.setViewportView(TextAreaWriteQuestion);
 
-        jRadioButtonAnswer1.setText("РћС‚РІРµС‚ 1");
+        jRadioButtonAnswer1.setText("Ответ 1");
         jRadioButtonAnswer1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonAnswer1ActionPerformed(evt);
             }
         });
 
-        jRadioButtonAnswer2.setText("РћС‚РІРµС‚ 2");
+        jRadioButtonAnswer2.setText("Ответ 2");
 
-        jRadioButtonAnswer3.setText("РћС‚РІРµС‚ 3");
+        jRadioButtonAnswer3.setText("Ответ 3");
 
-        jRadioButtonAnswer4.setText("РћС‚РІРµС‚ 4");
+        jRadioButtonAnswer4.setText("Ответ 4");
         jRadioButtonAnswer4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonAnswer4ActionPerformed(evt);
             }
         });
 
-        LabelOfTime.setText("Р’СЂРµРјСЏ, РїРѕС‚СЂР°С‡РµРЅРЅРѕРµ РЅР° С‚РµСЃС‚, СЃ.");
+        LabelOfTime.setText("Время, потраченное на тест, с.");
 
         ButtonContinueTest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        ButtonContinueTest.setText("РЎР»РµРґСѓСЋС‰РёР№ РІРѕРїСЂРѕСЃ");
+        ButtonContinueTest.setText("Следующий вопрос");
         ButtonContinueTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonContinueTestActionPerformed(evt);
@@ -80,7 +80,7 @@ public class QuizViewTest extends javax.swing.JFrame {
         });
 
         ButtonClose.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        ButtonClose.setText("Р—Р°РІРµСЂС€РёС‚СЊ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ");
+        ButtonClose.setText("Завершить тестирование");
         ButtonClose.setPreferredSize(new java.awt.Dimension(143, 25));
 
         javax.swing.GroupLayout PanelTestLayout = new javax.swing.GroupLayout(PanelTest);
@@ -127,22 +127,21 @@ public class QuizViewTest extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButtonAnswer1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButtonAnswer2)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButtonAnswer3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PanelTestLayout.createSequentialGroup()
-                        .addComponent(jRadioButtonAnswer4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelOfTime))
-                    .addComponent(TextFieldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jRadioButtonAnswer4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TextFieldTime)
+                    .addComponent(LabelOfTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonContinueTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
