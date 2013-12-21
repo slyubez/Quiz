@@ -8,7 +8,7 @@ import ru.progschool.november_2013.java.quiz.Answer;
  */
 public class Task {
 	public Task(){
-		this.answers = new ArrayList<>();
+		this.answers = new ArrayList();
 	}
 	/**
 	 * Текст вопроса

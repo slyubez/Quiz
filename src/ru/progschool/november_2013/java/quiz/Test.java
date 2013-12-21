@@ -14,29 +14,24 @@ import java.util.ArrayList;
  * программ администратора и тестирования.
  */
 public class Test {
+
+    private String subject;
+    private String name;
+    private ArrayList<Task> tasks;
+
 	public Test(){
-		this.tasks = new ArrayList<>();
+		this.tasks = new ArrayList();
 	}
-	/**
-	 * Тема опроса.
-	 */
-	private String subject;
-	/**
-	 * Название опроса.
-	 */
-	private String name;
-	/**
-	 * Список-массив объектов-вопросов
-	 */
-	private ArrayList<Task> tasks;
 	/**
 	 * Возвращает тему опроса
 	 */
-	public String getSubject(){return this.subject;}
+	public String getSubject(){return subject;}
 	/**
 	 * Устанавливает тему опроса
 	 */
-	public void setSubject (String txt){this.subject = txt;}	
+	public void setSubject (String txt){
+        subject = txt;
+    }
 	/**
 	 * Возвращает название опроса
 	 */
@@ -45,14 +40,20 @@ public class Test {
 	 * Устанавливает название опроса
 	 */
 	public void setName (String txt){this.name = txt;}
-	/**
+    /**
+     * Возвращает массив задач
+     */
+    public ArrayList getTasks(){
+        return this.tasks;
+    }
+    /**
+     * Добавляет вопрос в массив
+     */
+    public void appendTask(Task task){this.tasks.add(task);}
+    /**
 	 * Возвращает число вопросов в тесте (массиве)
 	 */
-	public int getQuestionsCount(){return this.tasks.size();}	
-	/**
-	 * Добавляет вопрос в массив
-	 */
-	public void appendTask(Task task){this.tasks.add(task);}	
+	public int getQuestionsCount(){return this.tasks.size();}
 	/**
 	 * Возвращает текст вопроса с индексом index
 	 */

@@ -2,9 +2,7 @@ package ru.progschool.november_2013.java.quiz;
 /**
  * @author ProgSchool
  */
-import java.awt.*;
-import javax.swing.*;
-import ru.progschool.november_2013.java.quiz.*;
+//import ru.progschool.november_2013.java.quiz.*;
 import java.io.File;
 
 /**
@@ -25,11 +23,8 @@ public class Quiz {
 	 * пользователя для последующей обработки.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		if (new File("This path to File").exists()) {
-			
-		}
-
+        QuizController quizController = new QuizController();     // Создание контроллера
+        quizController.performTest();                                 // Выдача всех задач на консоль
 	}
 
 }

@@ -4,17 +4,14 @@
 package ru.progschool.november_2013.java.quiz;
 
 /**
- * @author Sergey
+ * @author
  *
  */
-public class QuizView {
+public interface QuizView {
 
 	/**
-	 * @param args
+	 *
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public  void executeTest(Test test);
 
 }
