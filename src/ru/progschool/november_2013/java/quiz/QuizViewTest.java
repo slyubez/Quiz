@@ -38,9 +38,10 @@ public class QuizViewTest extends javax.swing.JFrame {
         jRadioButtonAnswer4 = new javax.swing.JRadioButton();
         LabelOfTime = new javax.swing.JLabel();
         TextFieldTime = new javax.swing.JTextField();
+        ButtonContinueTest = new javax.swing.JButton();
+        ButtonClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(752, 442));
 
         LabelofNumberOfQuestion.setText("Вопрос № 1.");
 
@@ -70,47 +71,78 @@ public class QuizViewTest extends javax.swing.JFrame {
 
         LabelOfTime.setText("Время, потраченное на тест, с.");
 
+        ButtonContinueTest.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        ButtonContinueTest.setText("Следующий вопрос");
+        ButtonContinueTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonContinueTestActionPerformed(evt);
+            }
+        });
+
+        ButtonClose.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        ButtonClose.setText("Завершить тестирование");
+        ButtonClose.setPreferredSize(new java.awt.Dimension(143, 25));
+
         javax.swing.GroupLayout PanelTestLayout = new javax.swing.GroupLayout(PanelTest);
         PanelTest.setLayout(PanelTestLayout);
         PanelTestLayout.setHorizontalGroup(
             PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTestLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1))
+            .addGroup(PanelTestLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelofNumberOfQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelTestLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButtonAnswer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelTestLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButtonAnswer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelTestLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButtonAnswer3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTestLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButtonAnswer4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(PanelTestLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelofNumberOfQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelTestLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addComponent(jRadioButtonAnswer4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonAnswer3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonAnswer2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButtonAnswer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(PanelTestLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(LabelOfTime)
-                .addGap(18, 18, 18)
-                .addComponent(TextFieldTime, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 239, Short.MAX_VALUE))
+                        .addComponent(ButtonContinueTest, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelTestLayout.createSequentialGroup()
+                        .addComponent(LabelOfTime, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextFieldTime, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         PanelTestLayout.setVerticalGroup(
             PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTestLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelofNumberOfQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LabelofNumberOfQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButtonAnswer1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButtonAnswer2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(3, 3, 3)
                 .addComponent(jRadioButtonAnswer3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButtonAnswer4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelTestLayout.createSequentialGroup()
+                        .addComponent(jRadioButtonAnswer4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelOfTime))
+                    .addComponent(TextFieldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(PanelTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelOfTime)
-                    .addComponent(TextFieldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(ButtonContinueTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,6 +172,10 @@ public class QuizViewTest extends javax.swing.JFrame {
     private void jRadioButtonAnswer4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAnswer4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonAnswer4ActionPerformed
+
+    private void ButtonContinueTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonContinueTestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonContinueTestActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +213,8 @@ public class QuizViewTest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonClose;
+    private javax.swing.JButton ButtonContinueTest;
     private javax.swing.JLabel LabelOfTime;
     private javax.swing.JLabel LabelofNumberOfQuestion;
     private javax.swing.JPanel PanelTest;

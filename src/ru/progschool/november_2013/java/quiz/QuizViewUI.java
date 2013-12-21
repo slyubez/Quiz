@@ -1,6 +1,6 @@
 // Первая форма с выбором предмета, имени
 
-package my.QuizView;
+package ru.progschool.november_2013.java.quiz;
 
 /**
  *

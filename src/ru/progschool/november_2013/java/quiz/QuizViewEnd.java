@@ -2,7 +2,7 @@
  * 3 С„РѕСЂРјР°-РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
  */
 
-package my.QuizView;
+package ru.progschool.november_2013.java.quiz;
 
 /**
  *
@@ -43,7 +43,7 @@ public class QuizViewEnd extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(752, 442));
 
         LabelOfResult.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        LabelOfResult.setText("Р РµР·СѓР»СЊС‚Р°С‚ С‚РµСЃС‚Р°:");
+        LabelOfResult.setText("Результат теста:");
 
         TextFieldResultName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,15 +51,15 @@ public class QuizViewEnd extends javax.swing.JFrame {
             }
         });
 
-        LabelResultOfRightAnswers.setText("РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂР°РІРёР»СЊРЅС‹С… РѕС‚РІРµС‚РѕРІ:");
+        LabelResultOfRightAnswers.setText("Количество правильных ответов:");
 
-        LabelResultName.setText("РРјСЏ:");
+        LabelResultName.setText("Имя:");
 
-        jLabel4.setText("РёР·");
+        jLabel4.setText("из");
 
-        LabelResultTime.setText("Р’СЂРµРјСЏ, РїРѕС‚СЂР°С‡РµРЅРЅРѕРµ РЅР° С‚РµСЃС‚, СЃ:");
+        LabelResultTime.setText("Время, потраченное на тест, с:");
 
-        LabelofResultSubject.setText("РџСЂРµРґРјРµС‚:");
+        LabelofResultSubject.setText("Предмет:");
 
         javax.swing.GroupLayout PanelResultLayout = new javax.swing.GroupLayout(PanelResult);
         PanelResult.setLayout(PanelResultLayout);
